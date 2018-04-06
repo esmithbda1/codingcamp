@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title><u>All That Llama's Know XD<u></title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="//fonts.googleapis.com/css?family=Indie Flower" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">Llama's Are Humans In Disguise</a></h1>
+    <div><img src="https://i.pinimg.com/originals/fe/2f/cf/fe2fcf4c0274878de2d7baf977095cb4.jpg"</div>
+        <div class="content container">
+
+            <div class="row">
+                <div class="col-md-8">
+                    {% for post in posts %}
+                        <div class="post">
+                            <div class="date">
+                                <p>published: {{ post.published_date }}</p>
+                            </div>
+                            <h1><a href="">{{ post.title }}</a></h1>
+                            <p>{{ post.text|linebreaksbr }}</p>
+                            <a href="{{ post.link }}">Click here to watch a video.</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
